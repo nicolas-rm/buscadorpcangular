@@ -53,17 +53,35 @@
 
     <input type="text" name="velocidadCpu" [(ngModel)]="computadora.velocidadCpu" class="form-control mb-4"
       placeholder="velocidadCpu">
-   
-
-    <input type="text" name="marcaCpu" [(ngModel)]="computadora.marcaCpu" class="form-control mb-4"
-      placeholder="marcaCpu">
 
 
-      <select class="browser-default custom-select  mb-4">
-          <option selected>Seleccionar una marca de CPU</option>
-          <option value="INTEL">Intel</option>
-          <option value="AMD">Amd</option>
-      </select>
+    <select name="marcaCpu" [(ngModel)]="computadora.marcaCpu" class="browser-default custom-select mb-4">
+        <option selected>Seleccionar una marca de CPU</option>
+        <option value="INTEL">Intel</option>
+        <option value="AMD">Amd</option>
+    </select>
+
+    <select name="lectorCD" [(ngModel)]="computadora.lectorCD" class="browser-default custom-select mb-4">
+        <option selected>¿Tiene lector de CD?</option>
+        <option value="true">Si</option>
+        <option value="false">No</option>
+    </select>
+
+    <div class="mb-4">
+      <p>Salida de video</p>
+      <input type="text" name="video" [ngModel]="computadora.video" class="form-control mb-4"
+      placeholder="Salida de video" disabled>
+      <div class="checkbox">
+        <label><input type="checkbox" (change)="agregarVideo($event)" value="VGA">VGA</label>
+      </div>
+      <div class="checkbox">
+        <label><input type="checkbox" (change)="agregarVideo($event)" value="HDMI">HDMI</label>
+      </div>
+      <div class="checkbox">
+        <label><input type="checkbox" (change)="agregarVideo($event)" value=""></label>
+      </div>
+      
+    </div>
 
 
     <input type="text" name="modeloTarjetaVideo" [(ngModel)]="computadora.modeloTarjetaVideo" class="form-control mb-4"

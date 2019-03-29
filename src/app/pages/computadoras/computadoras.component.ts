@@ -41,6 +41,11 @@ export class ComputadorasComponent implements OnInit {
   ngOnInit() {
   }
 
+  agregarVideo(event) {
+    console.log(event);
+    /* this.computadora.video += event + ','; */
+    /* console.log(this.computadora.video); */
+  }
 
   agregarPc(form: NgForm) {
     console.log(this.computadora);
