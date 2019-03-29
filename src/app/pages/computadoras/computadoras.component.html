@@ -1,0 +1,141 @@
+<div class="container">
+  <!-- Default form login -->
+
+  
+  <form ngNativeValidate #f="ngForm" (ngSubmit)="agregarPc(f)" class="text-center border border-light p-5">
+      <h2 class="mb-4 text-center">Agregar computadora</h2>
+
+      
+      
+      <p class="h5 mb-2 text-left">Datos principales</p>
+    <div class="row">
+
+      <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+        <input type="text" name="marca" [(ngModel)]="computadora.marca" class="form-control mb-4" placeholder="Marca">
+      </div>
+
+
+
+      <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+        <input type="text" name="modelo" [(ngModel)]="computadora.modelo" class="form-control mb-4"
+          placeholder="modelo">
+      </div>
+
+      <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+        <input type="number" name="precio" [(ngModel)]="computadora.precio" class="form-control mb-4"
+          placeholder="precio">
+      </div>
+
+    </div>
+
+
+
+
+
+
+    <input type="text" name="color" [(ngModel)]="computadora.color" class="form-control mb-4" placeholder="color">
+    <!-- <p> Marca: {{ computadora.color }}  <strong>:v</strong> </p> -->
+
+    <input type="text" name="almacenamiento" [(ngModel)]="computadora.almacenamiento" class="form-control mb-4"
+      placeholder="almacenamiento">
+    <!-- <p> Marca: {{ computadora.almacenamiento }}  <strong>:v</strong> </p> -->
+
+    <input type="text" name="tipoAlmacenamiento" [(ngModel)]="computadora.tipoAlmacenamiento" class="form-control mb-4"
+      placeholder="tipoAlmacenamiento">
+    <!-- <p> Marca: {{ computadora.tipoAlmacenamiento }}  <strong>:v</strong> </p> -->
+
+
+
+
+
+    <input type="text" name="ram" [(ngModel)]="computadora.ram" class="form-control mb-4" placeholder="ram">
+  
+
+    <input type="text" name="velocidadCpu" [(ngModel)]="computadora.velocidadCpu" class="form-control mb-4"
+      placeholder="velocidadCpu">
+   
+
+    <input type="text" name="marcaCpu" [(ngModel)]="computadora.marcaCpu" class="form-control mb-4"
+      placeholder="marcaCpu">
+
+
+      <select class="browser-default custom-select  mb-4">
+          <option selected>Seleccionar una marca de CPU</option>
+          <option value="INTEL">Intel</option>
+          <option value="AMD">Amd</option>
+      </select>
+
+
+    <input type="text" name="modeloTarjetaVideo" [(ngModel)]="computadora.modeloTarjetaVideo" class="form-control mb-4"
+      placeholder="modeloTarjetaVideo">
+    <!-- <p> Marca: {{ computadora.modeloTarjetaVideo }}  <strong>:v</strong> </p> -->
+
+    <!-- <input type="text" name="tamañoPantalla"[(ngModel)]="computadora.tamañoPantalla"  class="form-control mb-4" placeholder="tamañoPantalla"> -->
+    <!-- <p> Marca: {{ computadora.tamañoPantalla }}  <strong>:v</strong> </p> -->
+
+    <input type="text" name="resolucion" [(ngModel)]="computadora.resolucion" class="form-control mb-4"
+      placeholder="resolucion">
+    <!-- <p> Marca: {{ computadora.resolucion }}  <strong>:v</strong> </p> -->
+
+
+
+
+    <input type="text" name="ancho" [(ngModel)]="computadora.ancho" class="form-control mb-4" placeholder="ancho">
+    <!-- <p> Marca: {{ computadora.ancho }}  <strong>:v</strong> </p> -->
+
+    <input type="text" name="alto" [(ngModel)]="computadora.alto" class="form-control mb-4" placeholder="alto">
+    <!-- <p> Marca: {{ computadora.alto }}  <strong>:v</strong> </p> -->
+
+    <input type="text" name="peso" [(ngModel)]="computadora.peso" class="form-control mb-4" placeholder="peso">
+    <!-- <p> Marca: {{ computadora.peso }}  <strong>:v</strong> </p> -->
+
+
+
+    <input type="text" name="usb2" [(ngModel)]="computadora.usb2" class="form-control mb-4" placeholder="usb2">
+    <!-- <p> Marca: {{ computadora.usb2 }}  <strong>:v</strong> </p> -->
+
+    <input type="text" name="usb3" [(ngModel)]="computadora.usb3" class="form-control mb-4" placeholder="usb3">
+    <!-- <p> Marca: {{ computadora.usb3 }}  <strong>:v</strong> </p> -->
+
+
+
+    <!-- Default unchecked -->
+    <div class="custom-control custom-checkbox">
+      <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+      <label class="custom-control-label" for="defaultUnchecked">Default unchecked</label>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <!-- Password -->
+    <!-- <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password"> -->
+
+    <div class="d-flex justify-content-around">
+      <div>
+        <!-- Remember me -->
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="defaultLoginFormRemember">
+          <label class="custom-control-label" for="defaultLoginFormRemember">Remember me</label>
+        </div>
+      </div>
+      <div>
+        <!-- Forgot password -->
+        <a href="">Forgot password?</a>
+      </div>
+    </div>
+
+    <!-- Sign in button -->
+    <button class="btn btn-info btn-block my-4" type="submit">Agregar</button>
+
+  
+  </form>
+  <!-- Default form login -->
+
+</div>
