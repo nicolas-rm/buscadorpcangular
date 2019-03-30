@@ -1,159 +1,205 @@
 <div class="container">
-  <!-- Default form login -->
-
-  
-  <form ngNativeValidate #f="ngForm" (ngSubmit)="agregarPc(f)" class="text-center border border-light p-5">
-      <h2 class="mb-4 text-center">Agregar computadora</h2>
-
-      
-      
-      <p class="h5 mb-2 text-left">Datos principales</p>
-    <div class="row">
-
-      <div class="col-12 col-sm-12 col-md-4 col-lg-4">
-        <input type="text" name="marca" [(ngModel)]="computadora.marca" class="form-control mb-4" placeholder="Marca">
-      </div>
+    <!-- Default form login -->
 
 
+    <form ngNativeValidate #f="ngForm" (ngSubmit)="agregarPc(f)" class="text-center border border-light p-5">
+        <h2 class="mb-4 text-center">Agregar computadora</h2>
 
-      <div class="col-12 col-sm-12 col-md-4 col-lg-4">
-        <input type="text" name="modelo" [(ngModel)]="computadora.modelo" class="form-control mb-4"
-          placeholder="modelo">
-      </div>
+        <p class="h5 mb-2 text-left">Datos principales</p>
+        <div class="row">
 
-      <div class="col-12 col-sm-12 col-md-4 col-lg-4">
-        <input type="number" name="precio" [(ngModel)]="computadora.precio" class="form-control mb-4"
-          placeholder="precio">
-      </div>
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                <input type="text" name="marca" [(ngModel)]="computadora.marca" class="form-control mb-4" placeholder="Marca">
+            </div>
 
-    </div>
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                <input type="text" name="modelo" [(ngModel)]="computadora.modelo" class="form-control mb-4" placeholder="modelo">
+            </div>
 
-
-
-
-
-
-    <input type="text" name="color" [(ngModel)]="computadora.color" class="form-control mb-4" placeholder="color">
-    <!-- <p> Marca: {{ computadora.color }}  <strong>:v</strong> </p> -->
-
-    <input type="text" name="almacenamiento" [(ngModel)]="computadora.almacenamiento" class="form-control mb-4"
-      placeholder="almacenamiento">
-    <!-- <p> Marca: {{ computadora.almacenamiento }}  <strong>:v</strong> </p> -->
-
-    <input type="text" name="tipoAlmacenamiento" [(ngModel)]="computadora.tipoAlmacenamiento" class="form-control mb-4"
-      placeholder="tipoAlmacenamiento">
-    <!-- <p> Marca: {{ computadora.tipoAlmacenamiento }}  <strong>:v</strong> </p> -->
-
-
-
-
-
-    <input type="text" name="ram" [(ngModel)]="computadora.ram" class="form-control mb-4" placeholder="ram">
-  
-
-    <input type="text" name="velocidadCpu" [(ngModel)]="computadora.velocidadCpu" class="form-control mb-4"
-      placeholder="velocidadCpu">
-
-
-    <select name="marcaCpu" [(ngModel)]="computadora.marcaCpu" class="browser-default custom-select mb-4">
-        <option selected>Seleccionar una marca de CPU</option>
-        <option value="INTEL">Intel</option>
-        <option value="AMD">Amd</option>
-    </select>
-
-    <select name="lectorCD" [(ngModel)]="computadora.lectorCD" class="browser-default custom-select mb-4">
-        <option selected>¿Tiene lector de CD?</option>
-        <option value="true">Si</option>
-        <option value="false">No</option>
-    </select>
-
-    <div class="mb-4">
-      <p>Salida de video</p>
-      <input type="text" name="video" [ngModel]="computadora.video" class="form-control mb-4"
-      placeholder="Salida de video" disabled>
-      <div class="checkbox">
-        <label><input type="checkbox" (change)="agregarVideo($event)" value="VGA">VGA</label>
-      </div>
-      <div class="checkbox">
-        <label><input type="checkbox" (change)="agregarVideo($event)" value="HDMI">HDMI</label>
-      </div>
-      <div class="checkbox">
-        <label><input type="checkbox" (change)="agregarVideo($event)" value=""></label>
-      </div>
-      
-    </div>
-
-
-    <input type="text" name="modeloTarjetaVideo" [(ngModel)]="computadora.modeloTarjetaVideo" class="form-control mb-4"
-      placeholder="modeloTarjetaVideo">
-    <!-- <p> Marca: {{ computadora.modeloTarjetaVideo }}  <strong>:v</strong> </p> -->
-
-    <!-- <input type="text" name="tamañoPantalla"[(ngModel)]="computadora.tamañoPantalla"  class="form-control mb-4" placeholder="tamañoPantalla"> -->
-    <!-- <p> Marca: {{ computadora.tamañoPantalla }}  <strong>:v</strong> </p> -->
-
-    <input type="text" name="resolucion" [(ngModel)]="computadora.resolucion" class="form-control mb-4"
-      placeholder="resolucion">
-    <!-- <p> Marca: {{ computadora.resolucion }}  <strong>:v</strong> </p> -->
-
-
-
-
-    <input type="text" name="ancho" [(ngModel)]="computadora.ancho" class="form-control mb-4" placeholder="ancho">
-    <!-- <p> Marca: {{ computadora.ancho }}  <strong>:v</strong> </p> -->
-
-    <input type="text" name="alto" [(ngModel)]="computadora.alto" class="form-control mb-4" placeholder="alto">
-    <!-- <p> Marca: {{ computadora.alto }}  <strong>:v</strong> </p> -->
-
-    <input type="text" name="peso" [(ngModel)]="computadora.peso" class="form-control mb-4" placeholder="peso">
-    <!-- <p> Marca: {{ computadora.peso }}  <strong>:v</strong> </p> -->
-
-
-
-    <input type="text" name="usb2" [(ngModel)]="computadora.usb2" class="form-control mb-4" placeholder="usb2">
-    <!-- <p> Marca: {{ computadora.usb2 }}  <strong>:v</strong> </p> -->
-
-    <input type="text" name="usb3" [(ngModel)]="computadora.usb3" class="form-control mb-4" placeholder="usb3">
-    <!-- <p> Marca: {{ computadora.usb3 }}  <strong>:v</strong> </p> -->
-
-
-
-    <!-- Default unchecked -->
-    <div class="custom-control custom-checkbox">
-      <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-      <label class="custom-control-label" for="defaultUnchecked">Default unchecked</label>
-    </div>
-
-
-
-
-
-
-
-
-
-
-    <!-- Password -->
-    <!-- <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password"> -->
-
-    <div class="d-flex justify-content-around">
-      <div>
-        <!-- Remember me -->
-        <div class="custom-control custom-checkbox">
-          <input type="checkbox" class="custom-control-input" id="defaultLoginFormRemember">
-          <label class="custom-control-label" for="defaultLoginFormRemember">Remember me</label>
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                <input type="number" name="precio" [(ngModel)]="computadora.precio" class="form-control mb-4" placeholder="precio">
+            </div>
         </div>
-      </div>
-      <div>
-        <!-- Forgot password -->
-        <a href="">Forgot password?</a>
-      </div>
-    </div>
 
-    <!-- Sign in button -->
-    <button class="btn btn-info btn-block my-4" type="submit">Agregar</button>
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                <input type="text" name="almacenamiento" [(ngModel)]="computadora.almacenamiento" class="form-control mb-4" placeholder="almacenamiento">
+            </div>
 
-  
-  </form>
-  <!-- Default form login -->
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                <input type="text" name="tipoAlmacenamiento" [(ngModel)]="computadora.tipoAlmacenamineto" class="form-control mb-4" placeholder="tipoAlmacenamiento">
+            </div>
+
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                <input type="text" name="ram" [(ngModel)]="computadora.ram" class="form-control mb-4" placeholder="ram">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                <input type="text" name="velocidadCpu" [(ngModel)]="computadora.velocidadCpu" class="form-control mb-4" placeholder="velocidadCpu">
+            </div>
+
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                <select name="marcaCpu" [(ngModel)]="computadora.marcaCpu" class="browser-default custom-select mb-4" placeholder="Seleccionar una marca de CPU">
+                    <option selected >Seleccionar una marca de CPU</option>
+                    <option value="INTEL">Intel</option>
+                    <option value="AMD">Amd</option>
+                  </select>
+            </div>
+
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                <select name="lectorCD" [(ngModel)]="computadora.lectorCD" class="browser-default custom-select mb-4">
+                    <option selected>¿Tiene lector de CD?</option>
+                    <option value="true">Si</option>
+                    <option value="false">No</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                <input type="text" name="resolucion" [(ngModel)]="computadora.resolucion" class="form-control mb-4" placeholder="resolucion">
+            </div>
+
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                <input type="text" name="ancho" [(ngModel)]="computadora.ancho" class="form-control mb-4" placeholder="ancho">
+            </div>
+
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                <input type="text" name="alto" [(ngModel)]="computadora.alto" class="form-control mb-4" placeholder="alto">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                <input type="text" name="peso" [(ngModel)]="computadora.peso" class="form-control mb-4" placeholder="peso">
+            </div>
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                <input type="text" name="usb2" [(ngModel)]="computadora.usb2" class="form-control mb-4" placeholder="usb2">
+            </div>
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                <input type="text" name="usb3" [(ngModel)]="computadora.usb3" class="form-control mb-4" placeholder="usb3">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                <select name="tajetaIntegrada" [(ngModel)]="computadora.tajetaIntegrada" class="browser-default custom-select mb-4">
+                    <option selected>¿Tiene tarjeta integrada?</option>
+                    <option value="true">Si</option>
+                    <option value="false">No</option>
+                </select>
+            </div>
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                <select name="tajetaDedicada" [(ngModel)]="computadora.tajetaDedicada" class="browser-default custom-select mb-4">
+                    <option selected>¿Tiene tarjeta dedicada?</option>
+                    <option value="true">Si</option>
+                    <option value="false">No</option>
+                </select>
+            </div>
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+                <select name="tajetaDedicada" [(ngModel)]="computadora.tajetaDedicada" class="browser-default custom-select mb-4">
+                    <option selected>¿Tipo de tarjeta dedicada?</option>
+                    <option value="Nvidia">Nvidia</option>
+                    <option value="AMD">No</option>
+                    <option value="AMD">N/A</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="mb-4 bod border border-light p-5">
+            <!-- <p type="text" name="video" [ngModel]="computadora.video" class="form-control mb-4" placeholder="Salida de video" disabled>Salida de video</p> -->
+            <input type="text" name="video" [ngModel]="computadora.video" class="form-control" placeholder="Salida de video" disabled>
+            <div class="text-justify centrar">
+                <div class="col-12 col-sm-12 col-md-4 col-lg-4">
+
+                </div>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="VGA" (change)="agregarVideo($event)">
+                    <label class="custom-control-label" for="VGA">VGA</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="S-VIDEO" (change)="agregarVideo($event)">
+                    <label class="custom-control-label" for="S-VIDEO">S-VIDEO</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="MINI_VGA" (change)="agregarVideo($event)">
+                    <label class="custom-control-label" for="MINI_VGA">MINI VGA</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="DISPLAY_PORT" (change)="agregarVideo($event)">
+                    <label class="custom-control-label" for="DISPLAY_PORT">DISPLAY PORT</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="MINI_DISPLAY_PORT" (change)="agregarVideo($event)">
+                    <label class="custom-control-label" for="MINI_DISPLAY_PORT">MINI DISPLAY PORT</label>
+                </div>
+            </div>
+        </div>
+        <!-- <p> Marca: {{ computadora.color }}  <strong>:v</strong> </p> -->
+
+        <!-- <div class="container">
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <div class="card" style="margin:50px 0">
+                        <div class="card-header">Checkbox Animation</div>
+
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                Bootstrap Checkbox Default
+                                <label class="checkbox">
+                                                    <input type="checkbox" />
+                                                    <span class="default"></span>
+                                                </label>
+                            </li>
+                            <li class="list-group-item">
+                                Bootstrap Checkbox Primary
+                                <label class="checkbox">
+                                                    <input type="checkbox" />
+                                                    <span class="primary"></span>
+                                                </label>
+                            </li>
+                            <li class="list-group-item">
+                                Bootstrap Checkbox Success
+                                <label class="checkbox">
+                                                    <input type="checkbox" />
+                                                    <span class="success"></span>
+                                                </label>
+                            </li>
+                            <li class="list-group-item">
+                                Bootstrap Checkbox Info
+                                <label class="checkbox">
+                                                    <input type="checkbox" />
+                                                    <span class="info"></span>
+                                                </label>
+                            </li>
+                            <li class="list-group-item">
+                                Bootstrap Checkbox Warning
+                                <label class="checkbox">
+                                                    <input type="checkbox" />
+                                                    <span class="warning"></span>
+                                                </label>
+                            </li>
+                            <li class="list-group-item">
+                                Bootstrap Checkbox Danger
+                                <label class="checkbox">
+                                                    <input type="checkbox" />
+                                                    <span class="danger"></span>
+                                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+
+        <!-- Sign in button -->
+        <button class="btn btn-info btn-block my-4" type="submit">Agregar</button>
+
+
+    </form>
+    <!-- Default form login -->
 
 </div>

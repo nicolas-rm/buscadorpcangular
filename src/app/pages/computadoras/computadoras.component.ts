@@ -18,11 +18,11 @@ export class ComputadorasComponent implements OnInit {
     tipoAlmacenamineto: '',
     ram: '',
     velocidadCpu: '',
-    marcaCpu: '',
+    marcaCpu: false,
     lectorCD: false, /* aqui */
-    video: '',/* aqui */
-    tajetaIntegrada: false,/* aqui */
-    tajetaDedicada: false,/* aqui */
+    video: '', /* aqui */
+    tajetaIntegrada: false, /* aqui */
+    tajetaDedicada: false, /* aqui */
     modeloTarjetaVideo: '',
     tamañoPantalla: '',
     resolucion: '',
@@ -32,9 +32,9 @@ export class ComputadorasComponent implements OnInit {
     sistemaOperativo: '',
     usb2: '',
     usb3: '',
-    expansionRam: false,/* aqui */
+    expansionRam: false, /* aqui */
     img: ''
-  }
+  };
 
   constructor() { }
 
@@ -43,8 +43,8 @@ export class ComputadorasComponent implements OnInit {
 
   agregarVideo(event) {
     console.log(event);
-    /* this.computadora.video += event + ','; */
-    /* console.log(this.computadora.video); */
+    this.computadora.video += event + ',';
+    console.log(this.computadora.video);
   }
 
   agregarPc(form: NgForm) {
