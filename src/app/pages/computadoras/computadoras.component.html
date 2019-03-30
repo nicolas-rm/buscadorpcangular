@@ -42,7 +42,7 @@
 
             <div class="col-12 col-sm-12 col-md-4 col-lg-4">
                 <select name="marcaCpu" [(ngModel)]="computadora.marcaCpu" class="browser-default custom-select mb-4" placeholder="Seleccionar una marca de CPU">
-                    <option selected >Seleccionar una marca de CPU</option>
+                    <option selected="true" id="" disabled>Seleccionar una marca de CPU</option>
                     <option value="INTEL">Intel</option>
                     <option value="AMD">Amd</option>
                   </select>
@@ -85,26 +85,21 @@
 
         <div class="row">
             <div class="col-12 col-sm-12 col-md-4 col-lg-4">
-                <select name="tajetaIntegrada" [(ngModel)]="computadora.tajetaIntegrada" class="browser-default custom-select mb-4">
-                    <option selected>¿Tiene tarjeta integrada?</option>
+                <select name="tarjetaIntegrada" [(ngModel)]="computadora.tarjetaIntegrada" class="browser-default custom-select mb-4">
+                    <option>¿Tiene tarjeta integrada?</option>
                     <option value="true">Si</option>
                     <option value="false">No</option>
                 </select>
             </div>
             <div class="col-12 col-sm-12 col-md-4 col-lg-4">
-                <select name="tajetaDedicada" [(ngModel)]="computadora.tajetaDedicada" class="browser-default custom-select mb-4">
-                    <option selected>¿Tiene tarjeta dedicada?</option>
+                <select name="tarjetaDedicada" [(ngModel)]="computadora.tarjetaDedicada" class="browser-default custom-select mb-4">
+                    <option>¿Tiene tarjeta Dedicada?</option>
                     <option value="true">Si</option>
                     <option value="false">No</option>
                 </select>
             </div>
             <div class="col-12 col-sm-12 col-md-4 col-lg-4">
-                <select name="tajetaDedicada" [(ngModel)]="computadora.tajetaDedicada" class="browser-default custom-select mb-4">
-                    <option selected>¿Tipo de tarjeta dedicada?</option>
-                    <option value="Nvidia">Nvidia</option>
-                    <option value="AMD">No</option>
-                    <option value="AMD">N/A</option>
-                </select>
+                <input type="text" name="modeloTarjetaVideo" required [(ngModel)]="computadora.modeloTarjetaVideo" class="form-control mb-4" placeholder="Tarjeta integrada">
             </div>
         </div>
 
@@ -122,6 +117,10 @@
                 <div class="custom-control custom-checkbox">
                     <input type="checkbox" class="custom-control-input" id="S-VIDEO" (change)="agregarVideo($event)">
                     <label class="custom-control-label" for="S-VIDEO">S-VIDEO</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="HDMI" (change)="agregarVideo($event)">
+                    <label class="custom-control-label" for="HDMI">HDMI</label>
                 </div>
                 <div class="custom-control custom-checkbox">
                     <input type="checkbox" class="custom-control-input" id="MINI_VGA" (change)="agregarVideo($event)">

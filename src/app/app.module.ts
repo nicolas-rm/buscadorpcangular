@@ -7,15 +7,20 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { ComputadorasComponent } from './pages/computadoras/computadoras.component';
 
+// HttpClientModule
+import { HttpClientModule } from '@angular/common/http';
+
 //Routing 
 import { RouterModule, Routes } from '@angular/router';
 import { BuscadorpcComponent } from './pages/buscadorpc/buscadorpc.component';
+import { ResultadosSugerenciaComponent } from './pages/resultados-sugerencia/resultados-sugerencia.component';
 
 
 // Routes
 const routes: Routes = [
   { path: '', component: BuscadorpcComponent , pathMatch: 'full' },
   { path: 'computadoras', component: ComputadorasComponent },
+  { path: 'sugerencias', component: ResultadosSugerenciaComponent },
   { path: '**', component: BuscadorpcComponent },
 ];
 
@@ -23,12 +28,14 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     ComputadorasComponent,
-    BuscadorpcComponent
+    BuscadorpcComponent,
+    ResultadosSugerenciaComponent
   ],
   imports: [
     BrowserModule,
     MDBBootstrapModule.forRoot(),
     RouterModule.forRoot(routes),
+    HttpClientModule,
     // AngularFontAwesomeModule
     FormsModule,
     ReactiveFormsModule,
