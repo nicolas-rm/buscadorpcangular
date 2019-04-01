@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import swal from 'sweetalert2';
 import { ComputadoraService } from '../../services/computadora.service';
+// import { post } from 'selenium-webdriver/http';
 
 @Component({
   selector: 'app-computadoras',
@@ -29,7 +30,7 @@ export class ComputadorasComponent implements OnInit {
     tajetaIntegrada: false, /* aqui */
     tajetaDedicada: false, /* aqui */
     modeloTarjetaVideo: '',
-    tamañoPantalla: '',
+    tamanoPantalla: '',
     resolucion: '',
     ancho: '',
     alto: '',
@@ -41,6 +42,7 @@ export class ComputadorasComponent implements OnInit {
     img: ''
   };
 
+// tslint:disable-next-line: variable-name
   constructor(private _computadoraService: ComputadoraService) { }
 
   ngOnInit() {
@@ -53,8 +55,9 @@ export class ComputadorasComponent implements OnInit {
       this.arregloVideo.push(event.target.id.toString());
     } else {
       for (let i = 0; i < this.arregloVideo.length; i++) {
-        if (this.arregloVideo[i] === event.target.id.toString()) {
+        if (this.arregloVideo[i].toString === event.target.id.toString()) {
           this.arregloVideo.splice(i, i);
+          // this.arregloVideo.;
         }
       }
     }
@@ -65,6 +68,7 @@ export class ComputadorasComponent implements OnInit {
     console.log(this.computadora.video);
   }
 
+// tslint:disable-next-line: jsdoc-format
   /**una forma de validacion para la captura de datos o por si algo es invalido */
   agregarPc(form: NgForm) {
     if (form.invalid) {
@@ -73,6 +77,7 @@ export class ComputadorasComponent implements OnInit {
 
     console.log(this.computadora);
 
+// tslint:disable-next-line: jsdoc-format
     /**manda a llamar al metodo para guardar la computadora */
     this._computadoraService.registrarComputadora(this.computadora).subscribe((resp: any) => {
       console.log('se guardo exitosamente: computadoras.components.ts');
@@ -101,7 +106,7 @@ export class ComputadorasComponent implements OnInit {
     /*retro */
   }
 
-  
+
   // Cargar todas las computadoras
   /* this._computadoraService.cargarComputadoras(this.desde).subscribe(
       (resp: any) => {
