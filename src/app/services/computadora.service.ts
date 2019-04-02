@@ -11,7 +11,7 @@ import { decreaseElementDepthCount } from '@angular/core/src/render3/state';
 })
 export class ComputadoraService {
 
-  URL_SERVICIOS = 'http://localhost:3000/api';
+  URL_SERVICIOS = 'https://buscadorpc-app.herokuapp.com/api';
 
   headers = new HttpHeaders().set('Content-Type', 'application/json');
 
