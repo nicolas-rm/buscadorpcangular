@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute  } from '@angular/router';
 
 @Component({
   selector: 'app-resultados-sugerencia',
@@ -7,7 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResultadosSugerenciaComponent implements OnInit {
 
-  constructor() { }
+  computadoras: any = [];
+
+  constructor(
+    private router: Router,
+    private activatedRoute: ActivatedRoute) {
+      this.activatedRoute.params.subscribe( params => {
+        console.log(params);
+      });
+     }
 
   ngOnInit() {
   }

@@ -21,43 +21,42 @@ export class ComputadorasComponent implements OnInit {
     precio: 0.0,
     color: '',
     almacenamiento: '',
-    tipoAlmacenamineto: '',
+    tipoAlmacenamineto: 'default',
     ram: '',
     velocidadCpu: '',
-    marcaCpu: '',
-    lectorCD: false, /* aqui */
+    marcaCpu: 'default',
+    lectorCD: 'default', /* aqui */
     video: '', /* aqui */
-    tajetaIntegrada: false, /* aqui */
-    tajetaDedicada: false, /* aqui */
+    tajetaIntegrada: 'default', /* aqui */
+    tajetaDedicada: 'default', /* aqui */
     modeloTarjetaVideo: '',
     tamanoPantalla: '',
     resolucion: '',
     ancho: '',
     alto: '',
     peso: '',
-    sistemaOperativo: '',
+    sistemaOperativo: 'default',
     usb2: '',
     usb3: '',
-    expansionRam: false, /* aqui */
+    expansionRam: 'default', /* aqui */
     img: ''
   };
 
 // tslint:disable-next-line: variable-name
   constructor(private _computadoraService: ComputadoraService) { }
-
+ 
   ngOnInit() {
     this.arregloVideo = [];
   }
 
   agregarVideo(event) {
-
     if (event.target.checked) {
       this.arregloVideo.push(event.target.id.toString());
     } else {
       for (let i = 0; i < this.arregloVideo.length; i++) {
-        if (this.arregloVideo[i].toString === event.target.id.toString()) {
-          this.arregloVideo.splice(i, i);
-          // this.arregloVideo.;
+        if (this.arregloVideo[i] === event.target.id.toString()) {
+          this.arregloVideo.splice(i, 1);
+          // this.arregloVideo.;|
         }
       }
     }

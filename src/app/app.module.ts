@@ -20,7 +20,6 @@ import { ResultadosSugerenciaComponent } from './pages/resultados-sugerencia/res
 const routes: Routes = [
   { path: '', component: BuscadorpcComponent , pathMatch: 'full' },
   { path: 'computadoras', component: ComputadorasComponent },
-  { path: 'sugerencias', component: ResultadosSugerenciaComponent },
   { path: '**', component: BuscadorpcComponent },
 ];
 
